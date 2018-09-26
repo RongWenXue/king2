@@ -1,0 +1,204 @@
+/* 在主页的样式去引入公共的样式文件 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 防止边框padding超出页面宽度出现滚动条 */
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+  /*一般移动端清除a的点击高亮  透明就表示去掉*/
+  -webkit-tap-highlight-color: transparent;
+}
+input {
+  border: none;
+  outline: none;
+  /*清除移动端默认的表单样式*/
+  -webkit-appearance: none;
+}
+img {
+  /* 解决图片3px的间距 */
+  vertical-align: middle;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+body {
+  /* 给body设置最大宽度让页面在PC端不会太大 */
+  max-width: 750px;
+  /* 让body居中设置居中 块级居中使用margin:0 auto */
+  margin: 0px auto;
+}
+#header {
+  padding: 7px 10px;
+}
+#slide {
+  /* 修改小圆点样式 */
+}
+#slide img {
+  width: 100%;
+}
+#slide .swiper-pagination-bullet {
+  background-color: transparent;
+  opacity: 1;
+  border: 1px solid #fff;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+}
+#slide .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+/* 导航条区域的样式 */
+#nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+#nav ul li {
+  /* 当flex和百分比一起使用的时候 如果当前设置的百分比一行能够放的下才会生效 
+			如果百分比加起来超过了一行大小 不会生效 如果要生效给父元素设置flex换行*/
+  width: 25%;
+}
+#nav ul li > a {
+  display: block;
+  text-align: center;
+}
+#nav ul li > a > img {
+  width: 40px;
+  height: 40px;
+}
+#nav ul li > a > p {
+  font-size: 14px;
+  line-height: 30px;
+}
+/* 主体商品的样式 */
+#main {
+  background-color: #f5f5f5;
+  padding: 10px;
+  /* 给main添加padding-bottom60px 让底部挡住padding部分 */
+  padding-bottom: 60px;
+  /* 秒杀 */
+  /* 京东超市 */
+}
+#main .seckill {
+  background-color: #fff;
+  box-shadow: 0px 0px 1px #ccc;
+}
+#main .seckill .title {
+  display: flex;
+  position: relative;
+  line-height: 30px;
+}
+#main .seckill .title .naozhong {
+  width: 20px;
+  height: 25px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+#main .seckill .title .name {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #e93b3d;
+}
+#main .seckill .title .down-time {
+  margin-left: 10px;
+}
+#main .seckill .title .down-time > span {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /* 注意父元素设置了行高30px会继承 高度不需要30px只需要15px修改当前span行高为15px */
+  line-height: 15px;
+  text-align: center;
+}
+#main .seckill .title .down-time > span:nth-child(3n) {
+  background-color: #fff;
+  color: #000;
+}
+#main .seckill .title .more {
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+}
+#main .seckill .content > ul {
+  display: flex;
+}
+#main .seckill .content > ul > li {
+  flex: 1;
+  /* border-right: 1px solid @border-color;
+					&:last-child{
+						border-right: none;
+					} */
+}
+#main .seckill .content > ul > li + li {
+  border-left: 1px solid #ccc;
+}
+#main .seckill .content > ul > li > a {
+  display: block;
+  text-align: center;
+}
+#main .seckill .content > ul > li > a > img {
+  width: 110px;
+}
+#main .seckill .content > ul > li > a > p {
+  font-size: 12px;
+}
+#main .seckill .content > ul > li > a > p:nth-of-type(1) {
+  color: #e93b3d;
+}
+#main .seckill .content > ul > li > a > p:nth-of-type(2) {
+  color: #ccc;
+}
+#main .jd-market {
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px #ccc;
+}
+#main .jd-market .title {
+  border-bottom: 1px solid #ccc;
+}
+#main .jd-market .title > h4 {
+  font-weight: normal;
+  padding-left: 30px;
+  line-height: 30px;
+  position: relative;
+}
+#main .jd-market .title > h4::before {
+  content: '';
+  width: 4px;
+  height: 15px;
+  background-color: #e93b3d;
+  position: absolute;
+  left: 15px;
+  top: 7px;
+}
+#main .jd-market .content {
+  display: flex;
+}
+#main .jd-market .content .left {
+  flex: 1;
+}
+#main .jd-market .content .left > a {
+  display: block;
+}
+#main .jd-market .content .left > a > img {
+  width: 100%;
+}
+#main .jd-market .content .right {
+  flex: 1;
+}
+#main .jd-market .content .right > a {
+  display: block;
+}
+#main .jd-market .content .right > a > img {
+  width: 100%;
+}
